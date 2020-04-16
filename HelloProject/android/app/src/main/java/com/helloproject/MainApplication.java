@@ -1,4 +1,4 @@
-package com.covid_app;
+package com.helloproject;
 
 import android.app.Application;
 import android.content.Context;
@@ -8,12 +8,8 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.facebook.react.shell.MainReactPackage;
-import com.airbnb.android.react.maps.MapsPackage;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-import java.util.Arrays;
-import com.airbnb.android.react.maps.MapsPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -30,17 +26,13 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
-          return Arrays.<ReactPackage>asList(
-                  new MainReactPackage(),
-                  new MapsPackage()
-          );
+          return packages;
         }
 
         @Override
         protected String getJSMainModuleName() {
           return "index";
         }
-        
       };
 
   @Override
@@ -54,8 +46,6 @@ public class MainApplication extends Application implements ReactApplication {
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }
-
-
 
   /**
    * Loads Flipper in React Native templates. Call this in the onCreate method with something like
@@ -72,7 +62,7 @@ public class MainApplication extends Application implements ReactApplication {
          We use reflection here to pick up the class that initializes Flipper,
         since Flipper library is not available in release mode
         */
-        Class<?> aClass = Class.forName("com.covid_app.ReactNativeFlipper");
+        Class<?> aClass = Class.forName("com.helloproject.ReactNativeFlipper");
         aClass
             .getMethod("initializeFlipper", Context.class, ReactInstanceManager.class)
             .invoke(null, context, reactInstanceManager);

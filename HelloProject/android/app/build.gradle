@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.covid_app"
+        applicationId "com.helloproject"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -213,7 +213,6 @@ dependencies {
     } else {
         implementation jscFlavor
     }
-    implementation project(':react-native-maps')
 }
 
 // Run this once to be able to run the application with BUCK
